@@ -42,6 +42,7 @@ git clone https://github.com/SEIL-ISR/rcllean.git
 Return to the workspace root and build with colcon then source:
 
 ```bash
+cd ../
 source /opt/ros/jazzy/setup.bash
 colcon build
 ```
