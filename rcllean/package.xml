@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rcllean</name>
+  <version>0.1.0</version>
+  <description>
+    A ROS 2 client library for the Lean 4 programming language.
+  </description>
+  <maintainer email="rmatheu@umd.edu">Ryan Matheu</maintainer>
+  <license>Apache-2.0</license>
+  <url type="repository">https://github.com/SEIL-ISR/rcllean</url>
+
+  <depend>rcl</depend>
+  <depend>rcl_lifecycle</depend>
+  <depend>rcl_logging_interface</depend>
+  <depend>rcl_yaml_param_parser</depend>
+  <depend>rcutils</depend>
+  <depend>rmw</depend>
+  <depend>rmw_implementation</depend>
+  <depend>rosidl_runtime_c</depend>
+  <depend>rosidl_typesupport_c</depend>
+
+  <!-- Built from source in the workspace so rosidl_generator_lean gives them
+       Lean bindings, which this package imports. -->
+  <depend>rosidl_runtime_lean</depend>
+  <depend>builtin_interfaces</depend>
+  <depend>lifecycle_msgs</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>rosgraph_msgs</depend>
+
+  <export>
+    <build_type>ament_lake</build_type>
+    <!-- Run by colcon test on a ROS_DOMAIN_ID of their own; `lake test` runs
+         the unit tests, which need no middleware. -->
+    <lean_test_executable>test-topics</lean_test_executable>
+    <lean_test_executable>test-services</lean_test_executable>
+    <lean_test_executable>test-params</lean_test_executable>
+    <lean_test_executable>test-graph</lean_test_executable>
+    <lean_test_executable>test-lifecycle</lean_test_executable>
+    <lean_test_executable>test-executor</lean_test_executable>
+    <lean_test_executable>test-concurrency</lean_test_executable>
+    <lean_test_executable>test-marshal</lean_test_executable>
+  </export>
+</package>

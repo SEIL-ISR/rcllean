@@ -1,0 +1,18 @@
+.lake/
+build/
+install/
+log/
+*.olean
+*.ilean
+*.o
+*.a
+
+# Lake records dependency paths in the manifest, and under colcon those are
+# absolute paths into the install tree, so it is regenerated on every build.
+rcllean/lake-manifest.json
+
+# Sources fetched with `vcs import deps < jazzy.repos`
+deps/
+
+# macOS Finder metadata
+.DS_Store
