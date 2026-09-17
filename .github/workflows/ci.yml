@@ -39,7 +39,9 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Fetch the generator and the interface sources
-        run: vcs import deps < jazzy.repos
+        run: |
+          mkdir -p deps
+          vcs import deps < jazzy.repos
 
       - name: Cache the Lean toolchain
         uses: actions/cache@v4
